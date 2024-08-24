@@ -1,0 +1,131 @@
+.musicName {
+  font-size: 2rem;
+  display: block;
+  margin: 0 auto;
+  width: max-content;
+}
+
+.playerIconHandler {
+  border: none;
+  background: none;
+}
+
+.playerIcon {
+  fill: #fff;
+  width: 4rem;
+  height: 4rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.playerIcon:hover {
+  transform: scale(110%);
+}
+
+.audioDurationRange,
+.volumeRange {
+  appearance: none;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #444;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.audioDurationRange:hover,
+.volumeRange:hover {
+  overflow: visible;
+}
+
+.audioDurationRange::-webkit-slider-runnable-track,
+.volumeRange::-webkit-slider-runnable-track {
+  background: #444;
+  height: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.audioDurationRange::-webkit-slider-thumb,
+.volumeRange::-webkit-slider-thumb {
+  appearance: none;
+  box-shadow: 0px 0px 0px 0.09rem transparent;
+  background: transparent;
+  height: 0rem;
+  width: 0rem;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.audioDurationRange:hover::-webkit-slider-thumb,
+.volumeRange:hover::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  box-shadow: 0px 0px 0px 0.4rem #fff;
+  background: #fff;
+  height: 1.2rem;
+  width: 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.audioDurationRange::before,
+.volumeRange::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+  z-index: 1;
+  width: var(--timing);
+  pointer-events: none;
+  border-radius: 0.5rem;
+}
+
+.audioDurationRange:hover::before,
+.volumeRange:hover::before {
+  background: blueviolet;
+}
+
+.audioInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vynil {
+  width: 24rem;
+  height: 24rem;
+  fill: #fff;
+}
+
+.albumPic {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 620px) {
+  .volumeControl {
+    width: 100%;
+  }
+}

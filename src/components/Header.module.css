@@ -1,0 +1,89 @@
+.logo {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.header {
+  padding-top: 2rem;
+  padding-bottom: 7rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.musicsButton {
+  font-size: 1.2rem;
+  background: transparent;
+  border: 0.15rem solid #fff;
+  padding: 0.3rem 1rem;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0.5rem;
+}
+
+.musicsButton:hover {
+  color: blueviolet;
+  border-color: blueviolet;
+}
+
+.musicsMenu {
+  display: none;
+}
+
+.musicsMenuActive {
+  display: block;
+  position: fixed;
+  top: -2rem;
+  left: 0;
+  height: calc(100vh + 1rem);
+  width: 20vw;
+  background: #fff;
+  padding-left: 0;
+  color: #333;
+  z-index: 3;
+  list-style: none;
+  animation: showRight 0.3s forwards;
+  box-shadow: 2px 0px 10px 0px #111;
+}
+
+.musicsMenuActive li {
+  cursor: pointer;
+  padding: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.musicsMenuActive li:first-child {
+  padding-top: 3rem;
+}
+
+.musicsMenuActive li:hover {
+  background: blueviolet;
+  color: #111;
+}
+
+@keyframes showRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+@media (max-width: 800px) {
+  .musicsMenuActive {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .musicsMenuActive {
+    width: 60vw;
+  }
+}
